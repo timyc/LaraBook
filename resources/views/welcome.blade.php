@@ -16,11 +16,21 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="name" style="display:none"></label>
                         <div class="col">
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Firstname Lastname" autofocus>
+                            <label for="firstname" style="display:none"></label>
+                            <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" placeholder="First Name" autofocus>
 
-                            @error('name')
+                            @error('firstname')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="col">
+                            <label for="lastname" style="display:none"></label>
+                            <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" placeholder="Last Name" autofocus>
+
+                            @error('lastname')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -29,12 +39,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" style="display:none"></label>
+                        <label for="register_email" style="display:none"></label>
 
                         <div class="col">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address">
+                            <input id="register_email" type="email" class="form-control @error('register_email') is-invalid @enderror" name="register_email" value="{{ old('register_email') }}" required autocomplete="email" placeholder="Email Address">
 
-                            @error('email')
+                            @error('register_email')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,12 +53,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password" style="display:none"></label>
+                        <label for="register_password" style="display:none"></label>
 
                         <div class="col">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                            <input id="register_password" type="password" class="form-control @error('register_password') is-invalid @enderror" name="register_password" required autocomplete="new-password" placeholder="Password">
 
-                            @error('password')
+                            @error('register_password')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -57,10 +67,23 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password-confirm" style="display:none"></label>
+                        <label for="register_password-confirm" style="display:none"></label>
 
                         <div class="col">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                            <input id="register_password-confirm" type="password" class="form-control" name="register_password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row text-center">
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value=0>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value=1>
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
                         </div>
                     </div>
 

@@ -21,11 +21,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-color:#edf0f5">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">
                     {{ config('app.name', 'LaraBook') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -44,23 +44,28 @@
                         <form class="form-inline" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group row">
-                                <label for="email" style="display:none">{{ __('E-Mail Address') }}</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror mr-2" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address" autofocus>
+                                <label for="email">
+                                    
+                                </label>
 
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror mr-2" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address" autofocus>
                                 @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
-                                <label for="password" style="display:none">{{ __('Password') }}</label>
+
+                                <label for="password">
+
+                                </label>
 
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror mr-2" name="password" required autocomplete="current-password" placeholder="Password">
-
                                 @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
+
                                 <button type="submit" class="btn btn-secondary">
                                     {{ __('Login') }}
                                 </button>
